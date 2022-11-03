@@ -1,9 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
-const { connection } = require('mongoose');
+// require('dotenv').config();
+// const { connection } = require('mongoose');
 const userController = require('./controller/userController');
-
+const connection = require('./config/db');
+const questionController = require('./controller/questionController');
 
 const app = express();
 app.use(express.json());
@@ -15,7 +16,9 @@ app.get('/',(req,res)=>{
 
 app.use('/user',userController)
 
-app.listen(process.env.PORT,async ()=>{
+app.use('/question',questionController)
+
+app.listen(8000,async ()=>{
     try{
         await connection
         console.log('db is connected')
