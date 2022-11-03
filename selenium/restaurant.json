@@ -1,0 +1,68 @@
+{
+  "list_of_stores": [
+    {
+      "store_name": "McDonald's - Boat Quay",
+      "id": 1
+    },
+    {
+      "store_name": "Lucky Cafe - North Canal Road",
+      "id": 2
+    },
+    {
+      "store_name": "Drinifini - 37A South Bridge Road [Islandwide Delivery]",
+      "id": 3
+    },
+    {
+      "store_name": "Hot Shotz - Canton Street",
+      "id": 4
+    },
+    {
+      "store_name": "Khushboo – The Fragrance of India - Boat Quay",
+      "id": 5
+    },
+    {
+      "store_name": "Afuri - Funan",
+      "id": 6
+    },
+    {
+      "store_name": "MOS Burger - One Fullerton",
+      "id": 7
+    },
+    {
+      "store_name": "Poke Theory - Change Alley Mall",
+      "id": 8
+    },
+    {
+      "store_name": "McDonald's - Boat Quay",
+      "id": 9
+    },
+    {
+      "store_name": "Lucky Cafe - North Canal Road",
+      "id": 10
+    },
+    {
+      "store_name": "Drinifini - 37A South Bridge Road [Islandwide Delivery]",
+      "id": 11
+    },
+    {
+      "store_name": "Hot Shotz - Canton Street",
+      "id": 12
+    },
+    {
+      "store_name": "Khushboo – The Fragrance of India - Boat Quay",
+      "id": 13
+    },
+    {
+      "store_name": "Afuri - Funan",
+      "id": 14
+    },
+    {
+      "store_name": "MOS Burger - One Fullerton",
+      "id": 15
+    },
+    {
+      "store_name": "Poke Theory - Change Alley Mall",
+      "id": 16
+    }
+  ]
+}

@@ -19,9 +19,9 @@ const Quizpage = () => {
     
 
     const handleResult = () => {
-        // dispatch(scoreTotal({level,point}))
-        saveData('lvl',level)
-        saveData('point',point)
+        dispatch(scoreTotal({level,point}))
+        // saveData('lvl',level)
+        // saveData('point',point)
         navigate('/result')
     }
    

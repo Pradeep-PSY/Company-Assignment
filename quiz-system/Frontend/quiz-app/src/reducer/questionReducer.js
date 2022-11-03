@@ -7,8 +7,8 @@ import {
 const initialstate = {
   msg: '',
   questions: [],
-  level: 0,
-  point: 0,
+//   level: 0,
+//   point: 0,
 };
 
 export const questionReducer = (state = initialstate, { type, payload }) => {
@@ -20,7 +20,7 @@ export const questionReducer = (state = initialstate, { type, payload }) => {
           
         };
       }
-      
+
     case ADDED_QUESTION_SUCCESS: {
       alert(payload);
       return {
