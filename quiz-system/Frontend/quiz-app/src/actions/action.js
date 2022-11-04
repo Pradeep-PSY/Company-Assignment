@@ -4,14 +4,14 @@ import { loadData } from '../hoc/localStorage';
 
 export const signupApi = (data) => dispatch => {
   axios
-    .post('http://localhost:8000/user/register', data)
+    .post('https://frozen-temple-35144.herokuapp.com/user/register', data)
     .then(res => dispatch({ type: SIGNUP_SUCCESS, payload: res.data }))
     .catch(err => console.log(err));
 };
 
 export const loginApi = (data) => dispatch => {
   axios
-    .post('http://localhost:8000/user/login', data)
+    .post('https://frozen-temple-35144.herokuapp.com/user/login', data)
     .then(res => dispatch({ type: LOGIN_SUCCESS, payload: res.data }))
     .catch(err => console.log(err));
 };
@@ -22,14 +22,14 @@ export const logoutApi = () => dispatch => {
 
 export const questionApi = (data) =>dispatch =>{
     axios.defaults.headers.common['Authorization'] = `Bearer ${loadData('token')}`;
-    axios.post('http://localhost:8000/question/create',data)
+    axios.post('https://frozen-temple-35144.herokuapp.com/question/create',data)
     .then((res)=>dispatch({type:ADDED_QUESTION_SUCCESS,payload:res.data}))
     .catch((err)=>console.log(err))
 }
 
 export const getquestionApi =(data) => dispatch =>{
     axios.defaults.headers.common['Authorization'] = `Bearer ${loadData('token')}`;
-    axios.post('http://localhost:8000/question/',data)
+    axios.post('https://frozen-temple-35144.herokuapp.com/question/',data)
     .then((res)=>dispatch({type:GET_QUESTION_SUCCESS,payload:res.data}))
     .catch((err)=>console.log(err))
 }

@@ -20,8 +20,8 @@ const Quizpage = () => {
 
     const handleResult = () => {
         dispatch(scoreTotal({level,point}))
-        // saveData('lvl',level)
-        // saveData('point',point)
+        saveData('lvl',level)
+        saveData('point',point)
         navigate('/result')
     }
    
@@ -37,7 +37,7 @@ const Quizpage = () => {
     }
 
     
-    console.log(level,'level')
+    // console.log(level,'level')
     useEffect(() => {
         if (questions.length == 0) {
             // dispatch(getquestions(url))

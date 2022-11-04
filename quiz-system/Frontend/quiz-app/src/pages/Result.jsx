@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { loadData } from '../hoc/localStorage'
 
 const Result = () => {
-    const {level,point} = useSelector(state=>state.question)
+    // const {level,point} = useSelector(state=>state.question)
   return (
     <Box>
         <Flex justify="space-evenly" m='3' fontSize={'2xl'}>
