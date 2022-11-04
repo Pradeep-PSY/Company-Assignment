@@ -63,6 +63,234 @@
     {
       "store_name": "Poke Theory - Change Alley Mall",
       "id": 16
+    },
+    {
+      "store_name": "Song Fa Bak Kut Teh - New Bridge Road",
+      "id": 17
+    },
+    {
+      "store_name": "Paradise Dynasty - Funan",
+      "id": 18
+    },
+    {
+      "store_name": "Sanook Kitchen - Funan Mall",
+      "id": 19
+    },
+    {
+      "store_name": "WOK HEY - Funan",
+      "id": 20
+    },
+    {
+      "store_name": "Guzman Y Gomez - Funan",
+      "id": 21
+    },
+    {
+      "store_name": "Ajumma's - Funan",
+      "id": 22
+    },
+    {
+      "store_name": "Saap Saap Thai - Funan",
+      "id": 23
+    },
+    {
+      "store_name": "Bombay Grill - Authentic Indian Restaurant",
+      "id": 24
+    },
+    {
+      "store_name": "Paradise Dynasty - Funan",
+      "id": 25
+    },
+    {
+      "store_name": "Song Fa Bak Kut Teh - New Bridge Road",
+      "id": 26
+    },
+    {
+      "store_name": "Sanook Kitchen - Funan Mall",
+      "id": 27
+    },
+    {
+      "store_name": "WOK HEY - Funan",
+      "id": 28
+    },
+    {
+      "store_name": "Guzman Y Gomez - Funan",
+      "id": 29
+    },
+    {
+      "store_name": "Ajumma's - Funan",
+      "id": 30
+    },
+    {
+      "store_name": "Saap Saap Thai - Funan",
+      "id": 31
+    },
+    {
+      "store_name": "Bombay Grill - Authentic Indian Restaurant",
+      "id": 32
+    },
+    {
+      "store_name": "Paradise Dynasty - Funan",
+      "id": 33
+    },
+    {
+      "store_name": "Paradise Dynasty - Funan",
+      "id": 34
+    },
+    {
+      "store_name": "Paradise Dynasty - Funan",
+      "latitude": 1.2916398986687483,
+      "longitude": 103.85064630185201,
+      "id": 35
+    },
+    {
+      "store_name": "Paradise Dynasty - Funan",
+      "latitude": 1.2916398986687483,
+      "longitude": 103.85064630185201,
+      "id": 36
+    },
+    {
+      "store_name": "Stuff'd - Republic Plaza",
+      "latitude": 1.28297452,
+      "longitude": 103.8511924,
+      "id": 37
+    },
+    {
+      "store_name": "Twyst Pasta - Raffles Place MRT Station",
+      "latitude": 1.283198225,
+      "longitude": 103.8512954,
+      "id": 38
+    },
+    {
+      "store_name": "Guzman Y Gomez - Ocean Financial Centre",
+      "latitude": 1.2833088642857142,
+      "longitude": 103.8516994,
+      "id": 39
+    },
+    {
+      "store_name": "WOK HEY - Republic Plaza",
+      "latitude": 1.28297452,
+      "longitude": 103.8511924,
+      "id": 40
+    },
+    {
+      "store_name": "McDonald's - Boat Quay",
+      "latitude": 1.2857211372800634,
+      "longitude": 103.84982956837393,
+      "id": 41
+    },
+    {
+      "store_name": "Phat Fingers Korean Fried Chicken & Burgers - China Square Food Centre",
+      "latitude": 1.2828289584,
+      "longitude": 103.8489078,
+      "id": 42
+    },
+    {
+      "store_name": "Qin Ji Rougamo - One Raffles Place",
+      "latitude": 1.28400835,
+      "longitude": 103.85120835000001,
+      "id": 43
+    },
+    {
+      "store_name": "KOI Thé  - The Arcade",
+      "latitude": 1.28373342852349,
+      "longitude": 103.85167038,
+      "id": 44
+    },
+    {
+      "store_name": "Paradise Dynasty - Funan",
+      "latitude": 1.2916398986687483,
+      "longitude": 103.85064630185201,
+      "id": 45
+    },
+    {
+      "store_name": "Song Fa Bak Kut Teh - New Bridge Road",
+      "latitude": 1.2890973,
+      "longitude": 103.84783774614333,
+      "id": 46
+    },
+    {
+      "store_name": "Sanook Kitchen - Funan Mall",
+      "latitude": 1.2913950387570527,
+      "longitude": 103.85024709090908,
+      "id": 47
+    },
+    {
+      "store_name": "WOK HEY - Funan",
+      "latitude": 1.2915452804469254,
+      "longitude": 103.8505320292112,
+      "id": 48
+    },
+    {
+      "store_name": "Guzman Y Gomez - Funan",
+      "latitude": 1.2914432940603717,
+      "longitude": 103.85034534025522,
+      "id": 49
+    },
+    {
+      "store_name": "Ajumma's - Funan",
+      "latitude": 1.2913251,
+      "longitude": 103.8500892,
+      "id": 50
+    },
+    {
+      "store_name": "Saap Saap Thai - Funan",
+      "latitude": 1.2912451670268035,
+      "longitude": 103.85020825460789,
+      "id": 51
+    },
+    {
+      "store_name": "McDonald's - Boat Quay",
+      "latitude": 1.2857211372800634,
+      "longitude": 103.84982956837393,
+      "id": 52
+    },
+    {
+      "store_name": "Paradise Dynasty - Funan",
+      "latitude": 1.2916398986687483,
+      "longitude": 103.85064630185201,
+      "id": 53
+    },
+    {
+      "store_name": "Song Fa Bak Kut Teh - New Bridge Road",
+      "latitude": 1.2890973,
+      "longitude": 103.84783774614333,
+      "id": 54
+    },
+    {
+      "store_name": "Sanook Kitchen - Funan Mall",
+      "latitude": 1.2913950387570527,
+      "longitude": 103.85024709090908,
+      "id": 55
+    },
+    {
+      "store_name": "WOK HEY - Funan",
+      "latitude": 1.2915452804469254,
+      "longitude": 103.8505320292112,
+      "id": 56
+    },
+    {
+      "store_name": "Guzman Y Gomez - Funan",
+      "latitude": 1.2914432940603717,
+      "longitude": 103.85034534025522,
+      "id": 57
+    },
+    {
+      "store_name": "Ajumma's - Funan",
+      "latitude": 1.2913251,
+      "longitude": 103.8500892,
+      "id": 58
+    },
+    {
+      "store_name": "Saap Saap Thai - Funan",
+      "latitude": 1.2912451670268035,
+      "longitude": 103.85020825460789,
+      "id": 59
+    },
+    {
+      "store_name": "McDonald's - Boat Quay",
+      "latitude": 1.2857211372800634,
+      "longitude": 103.84982956837393,
+      "id": 60
     }
   ]
 }
