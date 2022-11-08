@@ -2,29 +2,30 @@ import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-import { scoreTotal } from '../actions/action';
 import Ans from '../components/Ans';
+import { getquestionApi, loadingState } from '../actions/action'
 import { loadData, saveData } from '../hoc/localStorage';
 
 const Quizpage = () => {
     const { questions } = useSelector(state => state.question);
- 
 
-    const [point,setPoint] = useState(0)
-    const [level,setLevel] = useState(5)
+    const [data] = useState([0])
+    const [point, setPoint] = useState(0)
+    const [level, setLevel] = useState(5)
     const [flag, setFlag] = useState('')
     const dispatch = useDispatch();
     const [num, setNum] = useState(0);
     const navigate = useNavigate();
-    
+
 
     const handleResult = () => {
-        dispatch(scoreTotal({level,point}))
-        saveData('lvl',level)
-        saveData('point',point)
+        // dispatch(scoreTotal({level,point}))
+        saveData('lvl', level)
+        data.push(point)
+        saveData('point', data)
         navigate('/result')
     }
-   
+
 
     const handlePrevious = () => {
         setNum(num - 1)
@@ -33,41 +34,46 @@ const Quizpage = () => {
 
     const handleNext = (num) => {
         setNum(num + 1)
+        data.push(point)
         setFlag('')
+        dispatch(loadingState())
     }
 
-    
+
     // console.log(level,'level')
     useEffect(() => {
         if (questions.length == 0) {
-            // dispatch(getquestions(url))
+            dispatch(getquestionApi({ difficulty: loadData('level') }))
         }
     }, [questions.length])
-    // console.log(count)
+        
     useEffect(() => {
         if (level == 1 || level == 10) {
+            saveData('lvl', level)
+            data.push(point)
+            saveData('point', data)
             navigate('/result')
         }
     }, [level])
 
     return (
         <Box p='4'>
-        <Flex fontSize='xl' justify={'space-evenly'} m='2'>
+            <Flex fontSize='xl' justify={'space-evenly'} m='2'>
 
-            <Text>Difficulty: {loadData('level')}</Text>
-            <Text>Level: {level}</Text>
-        </Flex>
+                <Text>Difficulty: {loadData('level')}</Text>
+                <Text>Level: {level}</Text>
+            </Flex>
             {questions.length > 0 ?
-                (<Box border="1px" p='2'>
+                (<Box border="1px" p='3'>
 
                     <Text fontSize='4xl'><span>{num + 1}.</span>  {questions[num].question}</Text>
                     {
-                        questions[num].options.map((el) => {
-                            return <Ans val={el} correct={questions[num].correct_answer} setPoint={setPoint} point={point} num={num} setLevel={setLevel} level={level} />
+                        questions[num].options.map((el, i) => {
+                            return <Ans key={i} val={el} correct={questions[num].correct_answer} setPoint={setPoint} point={point} num={num} setLevel={setLevel} level={level} />
                         })
                     }
-                   
-                </Box>) : ""
+
+                </Box>) : <Box textAlign="center" m='3' fontSize="2xl">Loading...</Box>
             }
             <Flex justify="center">
 

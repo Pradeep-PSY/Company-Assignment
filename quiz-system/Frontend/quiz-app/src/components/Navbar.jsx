@@ -1,13 +1,16 @@
 import {
     Box,
+    Collapse,
     Flex,
+    Icon,
     IconButton,
+    Stack,
     Text,
     useColorModeValue,
     useDisclosure,
 } from '@chakra-ui/react';
 import React from 'react';
-import { HamburgerIcon } from '@chakra-ui/icons';
+import { ChevronDownIcon, CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -26,6 +29,70 @@ const Navbar = () => {
     const handleLogout = () => {
         dispatch(logoutApi());
         navigate('/login');
+    };
+
+
+    const NAV_ITEMS = [
+
+        {
+            label: 'Login',
+            href: "/login"
+        },
+        {
+            label: 'Signup',
+            href: '/signup',
+        },
+
+    ];
+
+
+
+    const MobileNav = () => {
+        return (
+            <Stack
+                bg={useColorModeValue('white', 'gray.800')}
+                p={4}
+                display={{ md: 'none' }}>
+                <Flex
+                    py={2}
+
+
+                    justify={'space-between'}
+                    align={'center'}
+                    _hover={{
+                        textDecoration: 'none',
+                    }}>
+
+                    {isAuth ? (
+                        <Text cursor={'pointer'} m="2" fontSize="20" onClick={handleLogout}>
+                            Logout
+                        </Text>
+                    ) : (
+                        <Link to="/login">
+                            <Text cursor={'pointer'} m="2" fontSize="20" 
+                    onClick={onToggle}>
+                                Login
+                            </Text>
+                        </Link>
+                    )}
+
+                </Flex>
+                {isAuth ? (
+                    ''
+                ) : (
+                    <Link to="/signup">
+                        <Text cursor={'pointer'} fontWeight={600}
+                        
+                    onClick={onToggle}
+                            m="2" fontSize="20">
+                            Signup
+                        </Text>
+                    </Link>
+                )}
+
+
+            </Stack>
+        );
     };
 
     return (
@@ -49,8 +116,12 @@ const Navbar = () => {
                     cursor={'pointer'}
                     m="2"
                     display={['flex', 'flex', 'none', 'none']}
+
                     onClick={onToggle}
-                    icon={<HamburgerIcon />}
+                    icon={
+                        isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
+                    }
+
                 />
 
                 <Flex
@@ -83,7 +154,14 @@ const Navbar = () => {
                     <ColorModeSwitcher />
                 </Flex>
             </Flex>
+
+
+            <Collapse in={isOpen} animateOpacity>
+                <MobileNav />
+            </Collapse>
         </Box>
+
+
     );
 };
 

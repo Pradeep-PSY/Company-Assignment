@@ -47,6 +47,17 @@ const Signup = () => {
 
 
 
+    const {isAuth, role} =useSelector(state=>state.auth)
+
+
+    useEffect(()=>{
+        if(isAuth && role === 'admin'){
+            navigate('/admin_dashboard')
+           }
+           else if(isAuth && role === 'user'){
+            navigate('/quiz')
+           }
+    },[isAuth])
 
     return (
         <>

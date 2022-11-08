@@ -1,11 +1,15 @@
 import { Box } from '@chakra-ui/react'
+import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect, useState } from 'react'
+import { loadingState } from '../actions/action'
 
 const Ans = ({ val, correct, setPoint,point,num, setLevel, level }) => {
     const [flag, setFlag] = useState('')
  
-    console.log(point)
+    // console.log(point)
+    const {loading} = useSelector(state=>state.question)
 
+    const dispatch = useDispatch();
     const handleBg = () => {
         if (flag == '') {
             return
@@ -31,13 +35,15 @@ const Ans = ({ val, correct, setPoint,point,num, setLevel, level }) => {
             setPoint(point - 2);
             setLevel(level - 1)
         }
+
+        dispatch(loadingState())
     }
 
     useEffect(() => {
         setFlag('')
     }, [num])
     return (
-        <Box m='2' p='1' border='1px' fontSize='2xl' display='block' bg={handleBg}  onClick={() => handleClick(val)}>{val}</Box>
+        <Box as='button' m='2' p='1' display={'block'} w='98%' textAlign='left' disabled={loading} border='1px' fontSize='2xl'  bg={handleBg}  onClick={() => handleClick(val)}>{val}</Box>
 
     )
 }
