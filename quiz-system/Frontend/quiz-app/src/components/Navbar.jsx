@@ -32,18 +32,7 @@ const Navbar = () => {
     };
 
 
-    const NAV_ITEMS = [
-
-        {
-            label: 'Login',
-            href: "/login"
-        },
-        {
-            label: 'Signup',
-            href: '/signup',
-        },
-
-    ];
+   
 
 
 

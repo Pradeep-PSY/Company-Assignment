@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react'
 import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect, useState } from 'react'
-import { loadingState } from '../actions/action'
+import { loadingStateprev } from '../actions/action'
 
 const Ans = ({ val, correct, setPoint,point,num, setLevel, level }) => {
     const [flag, setFlag] = useState('')
@@ -36,7 +36,7 @@ const Ans = ({ val, correct, setPoint,point,num, setLevel, level }) => {
             setLevel(level - 1)
         }
 
-        dispatch(loadingState())
+        dispatch(loadingStateprev())
     }
 
     useEffect(() => {

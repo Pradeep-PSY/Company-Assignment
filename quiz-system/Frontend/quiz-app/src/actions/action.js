@@ -3,7 +3,8 @@ import {
   GET_QUESTION_SUCCESS,
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
-  SET_LOADING_STATE,
+  SET_LOADING_STATE_PREV,
+  SET_LOADING_STATE_NEXT,
   SIGNUP_SUCCESS,
   TOTAL_SCORE,
   TOTAL_SCORE_SUCCESS,
@@ -56,6 +57,12 @@ export const getquestionApi = data => dispatch => {
 
 
 
-export const loadingState = () => dispatch =>{
-  dispatch({type:SET_LOADING_STATE})
+export const loadingStateprev = () => dispatch =>{
+  dispatch({type:SET_LOADING_STATE_PREV})
+}
+
+
+
+export const loadingStatenext = () => dispatch =>{
+  dispatch({type:SET_LOADING_STATE_NEXT})
 }

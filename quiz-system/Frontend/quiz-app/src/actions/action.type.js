@@ -10,4 +10,6 @@ export const GET_QUESTION_SUCCESS = 'get-question/success';
 
 export const TOTAL_SCORE_SUCCESS = 'total-score/success';
 
-export const SET_LOADING_STATE  = 'set-loading/button-answer'
+export const SET_LOADING_STATE_PREV  = 'set-loading-prev/button-answer'
+
+export const SET_LOADING_STATE_NEXT  = 'set-loading-next/button-answer'

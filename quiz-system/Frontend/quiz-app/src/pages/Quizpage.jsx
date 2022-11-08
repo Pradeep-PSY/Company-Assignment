@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import Ans from '../components/Ans';
-import { getquestionApi, loadingState } from '../actions/action'
+import { getquestionApi, loadingStatenext, loadingStateprev } from '../actions/action'
 import { loadData, saveData } from '../hoc/localStorage';
 
 const Quizpage = () => {
@@ -17,7 +17,7 @@ const Quizpage = () => {
     const [num, setNum] = useState(0);
     const navigate = useNavigate();
 
-
+    const {loading} = useSelector(state=>state.question)
     const handleResult = () => {
         // dispatch(scoreTotal({level,point}))
         saveData('lvl', level)
@@ -30,17 +30,23 @@ const Quizpage = () => {
     const handlePrevious = () => {
         setNum(num - 1)
         setFlag('')
+        if(loading){
+            setPoint(point - 5)
+            setLevel(level - 1)
+        }
+        dispatch(loadingStateprev()) //separate the loading state on  previous fire false dispatch 
     }
 
     const handleNext = (num) => {
         setNum(num + 1)
         data.push(point)
         setFlag('')
-        dispatch(loadingState())
+
+        dispatch(loadingStatenext())
     }
 
 
-    // console.log(level,'level')
+    console.log(loading,'loading')
     useEffect(() => {
         if (questions.length == 0) {
             dispatch(getquestionApi({ difficulty: loadData('level') }))

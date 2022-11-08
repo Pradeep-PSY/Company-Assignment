@@ -1,7 +1,8 @@
 import {
   ADDED_QUESTION_SUCCESS,
   GET_QUESTION_SUCCESS,
-  SET_LOADING_STATE,
+  SET_LOADING_STATE_PREV,
+  SET_LOADING_STATE_NEXT,
   TOTAL_SCORE_SUCCESS,
 } from '../actions/action.type';
 
@@ -41,10 +42,17 @@ export const questionReducer = (state = initialstate, { type, payload }) => {
     //   };
     // }
 
-    case SET_LOADING_STATE :{
+    case SET_LOADING_STATE_PREV :{
       return {
         ...state,
-        loading:!state.loading
+        loading:true
+      }
+    }
+
+    case SET_LOADING_STATE_NEXT :{
+      return {
+        ...state,
+        loading:false
       }
     }
     default:
