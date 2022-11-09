@@ -1,68 +1,69 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Quiz System
 
-In the project directory, you can run:
+The System will include an Admin Panel for creating quizzes and a User Panel for participating in quizzes.
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Rules for Quiz
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+- Each question should have a difficulty defined between 1–10.
+- The quiz starts for everyone at difficulty level 5.
+- For every correct answer, the next question should be at the current level + 1 difficulty.
+- For every incorrect answer, the next question should be at the current level - 1 difficulty -1.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Client:** React, Redux, Chakra UI, 
 
-### `npm run eject`
+**Server:** Node, Express, jwt, bycrpt.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Run Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Clone the project
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+  git clone https://github.com/Pradeep-PSY/Company-Assignment/quiz-system/Frontend.git
+```
 
-## Learn More
+Go to the project directory
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  cd quiz-app
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Install dependencies
 
-### Code Splitting
+```bash
+  npm install
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Start the server
 
-### Analyzing the Bundle Size
+```bash
+  npm run start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+## Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+deployed link of project
 
-### Advanced Configuration
+```bash
+ https://quiz-app-one-self.vercel.app/login
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+## Screenshots
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+![Screenshot (99)](https://user-images.githubusercontent.com/101596416/200785958-19aa9f74-a4d7-4867-b0fe-757869220953.png)
+![Screenshot (100)](https://user-images.githubusercontent.com/101596416/200786021-435af708-83c2-4aad-8839-f2b18eb2ae2b.png)
+![Screenshot (101)](https://user-images.githubusercontent.com/101596416/200786068-7b41d2f0-1c12-4590-95ad-17d57cfcddfd.png)
+![Screenshot (102)](https://user-images.githubusercontent.com/101596416/200786111-ae22ba08-68fb-4553-81c8-7a577647a4be.png)
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![Screenshot (103)](https://user-images.githubusercontent.com/101596416/200786170-e2482243-e184-418e-b2d7-1acaa1f947de.png)
+![Screenshot (104)](https://user-images.githubusercontent.com/101596416/200786196-0f6d8d83-2181-44c3-a38d-418392606aac.png)
