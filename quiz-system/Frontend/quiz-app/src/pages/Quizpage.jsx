@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Text, useColorModeValue } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
@@ -46,7 +46,7 @@ const Quizpage = () => {
     }
 
 
-    console.log(loading,'loading')
+    // console.log(loading,'loading')
     useEffect(() => {
         if (questions.length == 0) {
             dispatch(getquestionApi({ difficulty: loadData('level') }))
@@ -63,14 +63,15 @@ const Quizpage = () => {
     }, [level])
 
     return (
-        <Box p='4'>
-            <Flex fontSize='xl' justify={'space-evenly'} m='2'>
+        <Box p='4' backgroundColor="#4c43d4"  width="100wh"
+        height="100vh">
+            <Flex fontSize='xl' justify={'space-evenly'} m='2' >
 
                 <Text>Difficulty: {loadData('level')}</Text>
                 <Text>Level: {level}</Text>
             </Flex>
             {questions.length > 0 ?
-                (<Box border="1px" p='3'>
+                (<Box border="1px" p='3' >
 
                     <Text fontSize='4xl'><span>{num + 1}.</span>  {questions[num].question}</Text>
                     {

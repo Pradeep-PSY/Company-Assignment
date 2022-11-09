@@ -19,7 +19,7 @@ import { useDispatch } from 'react-redux';
 import { loadData } from '../hoc/localStorage';
 
 const Navbar = () => {
-    const bg = useColorModeValue('yellow', 'gray.700');
+    const bg = useColorModeValue( '#00d1a0', '#00b48a');
     const color = useColorModeValue('gray.800', 'white');
     const { isOpen, onToggle } = useDisclosure();
     const isAuth = loadData('isAuth');

@@ -38,7 +38,7 @@ export const authReducer = (state = initialstate, { type, payload }) => {
     }
 
     case LOGOUT_SUCCESS: {
-        console.log(type,payload)
+        // console.log(type,payload)
       saveData('isAuth', false);
       saveData('token', '');
       saveData('role', '');
