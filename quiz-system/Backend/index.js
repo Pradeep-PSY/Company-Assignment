@@ -5,6 +5,7 @@ const cors = require('cors');
 const userController = require('./controller/userController');
 const connection = require('./config/db');
 const questionController = require('./controller/questionController');
+const magicController = require('./controller/magicController');
 
 const app = express();
 app.use(express.json());
@@ -17,6 +18,8 @@ app.get('/',(req,res)=>{
 app.use('/user',userController)
 
 app.use('/question',questionController)
+
+app.use('/magic', magicController)
 
 app.listen(8000,async ()=>{
     try{

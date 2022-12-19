@@ -11,7 +11,7 @@ const authentication = (req,res,next) =>{
 
         
         if(decoded){
-          
+            req.body.email = decoded.email;
             req.body.role = decoded.role;
             next()
         }
