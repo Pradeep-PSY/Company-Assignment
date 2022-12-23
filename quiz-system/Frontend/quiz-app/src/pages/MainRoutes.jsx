@@ -8,6 +8,7 @@ import { RequiredauthAdmin, RequiredauthUser} from '../hoc/requiredAuth'
 import Quizpage from './Quizpage'
 import Result from './Result'
 import { Box } from '@chakra-ui/react'
+import Magic from './Magic'
 
 const MainRoutes = () => {
     return (
@@ -33,6 +34,11 @@ const MainRoutes = () => {
             <Route path='/result' element={
                 <RequiredauthUser>
                     <Result />
+                </RequiredauthUser>
+            } />
+            <Route path='/magic' element={
+                <RequiredauthUser>
+                    <Magic />
                 </RequiredauthUser>
             } />
             <Route path="/*" element={<Box textAlign="center" m='3' fontSize="2xl">Page Not Found</Box>} />

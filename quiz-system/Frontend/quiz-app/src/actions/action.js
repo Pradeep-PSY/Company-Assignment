@@ -8,20 +8,22 @@ import {
   SIGNUP_SUCCESS,
   TOTAL_SCORE,
   TOTAL_SCORE_SUCCESS,
+  GET_MAGIC_SUCCESS,
+  GET_MAGIC_DATA_SUCCESS,
 } from './action.type';
 import axios from 'axios';
 import { loadData } from '../hoc/localStorage';
 
 export const signupApi = data => dispatch => {
   axios
-    .post('https://frozen-temple-35144.herokuapp.com/user/register', data)
+    .post('https://quiz-system-mroc.onrender.com/user/register', data)
     .then(res => dispatch({ type: SIGNUP_SUCCESS, payload: res.data }))
     .catch(err => console.log(err));
 };
 
 export const loginApi = data => dispatch => {
   axios
-    .post('https://frozen-temple-35144.herokuapp.com/user/login', data)
+    .post('https://quiz-system-mroc.onrender.com/user/login', data)
     .then(res => dispatch({ type: LOGIN_SUCCESS, payload: res.data }))
     .catch(err => console.log(err));
 };
@@ -35,7 +37,7 @@ export const questionApi = data => dispatch => {
     'token'
   )}`;
   axios
-    .post('https://frozen-temple-35144.herokuapp.com/question/create', data)
+    .post('https://quiz-system-mroc.onrender.com/question/create', data)
     .then(res => dispatch({ type: ADDED_QUESTION_SUCCESS, payload: res.data }))
     .catch(err => console.log(err));
 };
@@ -45,7 +47,7 @@ export const getquestionApi = data => dispatch => {
     'token'
   )}`;
   axios
-    .post('https://frozen-temple-35144.herokuapp.com/question/', data)
+    .post('https://quiz-system-mroc.onrender.com/question/', data)
     .then(res => dispatch({ type: GET_QUESTION_SUCCESS, payload: res.data }))
     .catch(err => console.log(err));
 };
@@ -65,4 +67,24 @@ export const loadingStateprev = () => dispatch =>{
 
 export const loadingStatenext = () => dispatch =>{
   dispatch({type:SET_LOADING_STATE_NEXT})
+}
+
+export const getMagic = () => dispatch =>{
+  axios.defaults.headers.common['Authorization'] = `Bearer ${loadData(
+    'token'
+  )}`;
+  axios
+  .post('https://quiz-system-mroc.onrender.com/magic/')
+  .then(res => dispatch({ type: GET_MAGIC_SUCCESS, payload: res.data }))
+  .catch(err => console.log(err));
+}
+
+export const getMagicdata = () =>dispatch => {
+  axios.defaults.headers.common['Authorization'] = `Bearer ${loadData(
+    'token'
+  )}`;
+  axios
+  .get('https://quiz-system-mroc.onrender.com/magic/question')
+  .then(res => dispatch({ type: GET_MAGIC_DATA_SUCCESS, payload: res.data }))
+  .catch(err => console.log(err));
 }

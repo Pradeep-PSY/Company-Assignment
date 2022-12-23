@@ -1,6 +1,9 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { Box, Button, Flex, Text } from '@chakra-ui/react'
+
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { getMagic } from '../actions/action'
 import Chart_lg from '../components/Chart'
 
 import Chart_md from '../components/Chart1'
@@ -9,8 +12,25 @@ import Chart_sm from '../components/Chart_sm'
 import { loadData } from '../hoc/localStorage'
 
 const Result = () => {
+  const dispatch = useDispatch();
   const [score] = useState(loadData('point'));
-  const {level,point} = useSelector(state=>state.question)
+  const {once} = useSelector(state=>state.question)
+  const navigate = useNavigate();
+
+  const handleMagic =() =>{
+    dispatch(getMagic())
+  }
+
+  useEffect(() => {
+    if(once === true){
+      alert('you had experience the magic once')
+    }
+    else if(once === false){
+      navigate('/magic')
+
+    }
+  }, [once])
+  
   
   return (
     <Box>
@@ -44,6 +64,13 @@ const Result = () => {
       <Box m='auto' p='6' w={{ base: '380px', md: '450px', lg: '600px' }} display={{ base: 'block', md: 'none', lg: 'none' }} >
 
         <Chart_sm />
+      </Box>
+
+      <Box m='auto' p='6'  textAlign='center'>
+        <Text fontSize='xl' color='teal' fontWeight='bold'>If you want to experience some magic then click the button below.</Text>
+       
+          <Button colorScheme='red' m='2' onClick={handleMagic} disabled={once}>Magic</Button>
+      
       </Box>
     </Box>
   )
