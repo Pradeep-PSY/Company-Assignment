@@ -3,30 +3,31 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMagicdata } from '../actions/action';
+import { Link } from 'react-router-dom';
 
 const Magic = () => {
     const [num, setNum] = useState(0);
-    const {magic} = useSelector(state=>state.question);
+    const { magic } = useSelector(state => state.question);
     const dispatch = useDispatch();
 
     const handleResult = () => {
-    
+
         setNum(num + 1);
-        
+
     };
 
-   
+
 
     const handleNext = num => {
         setNum(num + 1);
-       
+
     };
 
-   useEffect(()=>{
-        if(magic.length === 0){
+    useEffect(() => {
+        if (magic.length === 0) {
             dispatch(getMagicdata())
         }
-   },[])
+    }, [])
 
     return (
         <Box p="4" backgroundColor="#4c43d4" width="100wh" height="100vh">
@@ -46,7 +47,9 @@ const Magic = () => {
                         Show
                     </Button>
                 ) : num === magic.length - 1 ? (
-                    ''
+                    <Link to='/quiz' >
+                        <Button m="2" colorScheme="teal" > Home </Button>
+                    </Link>
                 ) : (
                     <Button
                         m="2"
