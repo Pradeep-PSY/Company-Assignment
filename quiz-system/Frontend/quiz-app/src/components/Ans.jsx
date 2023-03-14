@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect, useState } from 'react'
 import { loadingStateprev } from '../actions/action'
 
-const Ans = ({ val, correct, setPoint,point,num, setLevel, level }) => {
+const Ans = ({ val, correct, setPoint, point, num, setLevel, level }) => {
     const [flag, setFlag] = useState('')
- 
+
     // console.log(point)
-    const {loading} = useSelector(state=>state.question)
+    const { loading } = useSelector(state => state.question)
 
     const dispatch = useDispatch();
     const handleBg = () => {
@@ -43,7 +43,7 @@ const Ans = ({ val, correct, setPoint,point,num, setLevel, level }) => {
         setFlag('')
     }, [num])
     return (
-        <Box as='button' m='2' p='1' display={'block'} w='98%' textAlign='left' disabled={loading} border='1px' fontSize='2xl'  bg={handleBg}  onClick={() => handleClick(val)}>{val}</Box>
+        <Box as='button' m='2' p='1' display={'block'} w='98%' textAlign='left' disabled={loading} border='1px' fontSize='2xl' bg={handleBg} onClick={() => handleClick(val)}>{val}</Box>
 
     )
 }

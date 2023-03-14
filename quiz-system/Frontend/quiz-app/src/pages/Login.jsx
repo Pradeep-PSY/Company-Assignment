@@ -13,7 +13,7 @@ import {
     FormControl,
     InputRightElement,
     useColorModeValue,
-    
+
     useToast,
 } from '@chakra-ui/react';
 import { FaUserAlt, FaLock } from 'react-icons/fa';
@@ -34,23 +34,23 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const {isAuth, role} =useSelector(state=>state.auth)
+    const { isAuth, role } = useSelector(state => state.auth)
 
     const handleSubmit = () => {
 
-        dispatch(loginApi({email,password}))
-       
+        dispatch(loginApi({ email, password }))
+
     };
 
-    useEffect(()=>{
-        if(isAuth && role === 'admin'){
+    useEffect(() => {
+        if (isAuth && role === 'admin') {
             navigate('/admin_dashboard')
-           }
-           else if(isAuth && role === 'user'){
+        }
+        else if (isAuth && role === 'user') {
             navigate('/quiz')
-           }
-    },[isAuth])
-   
+        }
+    }, [isAuth])
+
     const handleShowClick = () => setShowPassword(!showPassword);
     return (
         <>

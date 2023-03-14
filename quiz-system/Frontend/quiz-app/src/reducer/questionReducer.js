@@ -13,15 +13,13 @@ const initialstate = {
   questions: [],
   level: 0,
   point: 0,
-  loading:false,
-  once:'',
-  magic:[]
+  loading: false,
+  once: '',
+  magic: [],
 };
 
 export const questionReducer = (state = initialstate, { type, payload }) => {
   switch (type) {
-   
-
     case ADDED_QUESTION_SUCCESS: {
       alert(payload);
       return {
@@ -46,33 +44,33 @@ export const questionReducer = (state = initialstate, { type, payload }) => {
     //   };
     // }
 
-    case SET_LOADING_STATE_PREV :{
+    case SET_LOADING_STATE_PREV: {
       return {
         ...state,
-        loading:true
-      }
+        loading: true,
+      };
     }
 
-    case SET_LOADING_STATE_NEXT :{
+    case SET_LOADING_STATE_NEXT: {
       return {
         ...state,
-        loading:false
-      }
+        loading: false,
+      };
     }
 
-    case GET_MAGIC_SUCCESS:{
+    case GET_MAGIC_SUCCESS: {
       // console.log(payload)
       return {
         ...state,
-        once:payload
-      }
+        once: payload,
+      };
     }
 
     case GET_MAGIC_DATA_SUCCESS: {
       return {
         ...state,
-        magic:payload
-      }
+        magic: payload,
+      };
     }
     default:
       return state;

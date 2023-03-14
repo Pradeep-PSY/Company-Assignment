@@ -46,7 +46,7 @@ const Dashboard = () => {
   const handleaddQuestion = () => {
     console.log(data)
     dispatch(questionApi(data))
-    
+
   };
   return (
     <>

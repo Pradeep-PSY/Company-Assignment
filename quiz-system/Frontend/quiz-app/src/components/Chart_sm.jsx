@@ -29,41 +29,41 @@ const Chart_sm = () => {
             .range([h, 0]);
 
         const generateScaledLine = d3.line()
-        .x((d, i )=> xScale(i))
-        .y(yScale)
-        .curve(d3.curveCardinal);
+            .x((d, i) => xScale(i))
+            .y(yScale)
+            .curve(d3.curveCardinal);
 
         //setting the axes 
         const xAxis = d3.axisBottom(xScale)
-        .ticks(data.length)
-        .tickFormat(i => i);
+            .ticks(data.length)
+            .tickFormat(i => i);
 
         const yAxis = d3.axisLeft(yScale)
-        .ticks(5);
+            .ticks(5);
 
         svg.append('g')
-        .call(xAxis)
-        .attr('transform', `translate(0,${h})`);
+            .call(xAxis)
+            .attr('transform', `translate(0,${h})`);
 
         svg.append('g')
-        .call(yAxis);
+            .call(yAxis);
 
 
         //setting up the data for the svg
         svg.selectAll('.line')
-        .data([data])
-        .join('path')
-        .attr('d', d=> generateScaledLine(d))
-        .attr('fill', 'none').attr('stroke', 'black');
+            .data([data])
+            .join('path')
+            .attr('d', d => generateScaledLine(d))
+            .attr('fill', 'none').attr('stroke', 'black');
 
 
     }, [data])
     return (
-        <Box m='5'  p='6' w={{ base: '300px', md: '360px', lg: '560px' }}>
+        <Box m='5' p='6' w={{ base: '300px', md: '360px', lg: '560px' }}>
 
-            <svg   ref={svgRef} ></svg>
+            <svg ref={svgRef} ></svg>
         </Box>
-       
+
     )
 }
 

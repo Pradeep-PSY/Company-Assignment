@@ -17,7 +17,7 @@ const Quizpage = () => {
     const [num, setNum] = useState(0);
     const navigate = useNavigate();
 
-    const {loading} = useSelector(state=>state.question)
+    const { loading } = useSelector(state => state.question)
     const handleResult = () => {
         // dispatch(scoreTotal({level,point}))
         saveData('lvl', level)
@@ -30,7 +30,7 @@ const Quizpage = () => {
     const handlePrevious = () => {
         setNum(num - 1)
         setFlag('')
-        if(loading){
+        if (loading) {
             setPoint(point - 5)
             setLevel(level - 1)
         }
@@ -52,7 +52,7 @@ const Quizpage = () => {
             dispatch(getquestionApi({ difficulty: loadData('level') }))
         }
     }, [questions.length])
-        
+
     useEffect(() => {
         if (level == 1 || level == 10) {
             saveData('lvl', level)
@@ -63,8 +63,8 @@ const Quizpage = () => {
     }, [level])
 
     return (
-        <Box p='4' backgroundColor="#4c43d4"  width="100wh"
-        height="100vh">
+        <Box p='4' backgroundColor="#4c43d4" width="100wh"
+            height="100vh">
             <Flex fontSize='xl' justify={'space-evenly'} m='2' >
 
                 <Text>Difficulty: {loadData('level')}</Text>

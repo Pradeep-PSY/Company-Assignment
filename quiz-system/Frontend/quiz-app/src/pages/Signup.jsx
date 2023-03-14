@@ -47,17 +47,17 @@ const Signup = () => {
 
 
 
-    const {isAuth, role} =useSelector(state=>state.auth)
+    const { isAuth, role } = useSelector(state => state.auth)
 
 
-    useEffect(()=>{
-        if(isAuth && role === 'admin'){
+    useEffect(() => {
+        if (isAuth && role === 'admin') {
             navigate('/admin_dashboard')
-           }
-           else if(isAuth && role === 'user'){
+        }
+        else if (isAuth && role === 'user') {
             navigate('/quiz')
-           }
-    },[isAuth])
+        }
+    }, [isAuth])
 
     return (
         <>
@@ -86,7 +86,7 @@ const Signup = () => {
                                     value={signup.name}
                                     onChange={handleChange}
                                 />
-                               
+
                             </FormControl>
 
                             <FormControl id="email" isRequired>
@@ -97,7 +97,7 @@ const Signup = () => {
                                     value={signup.email}
                                     onChange={handleChange}
                                 />
-                                
+
                             </FormControl>
                             <FormControl id="password" isRequired>
                                 <FormLabel>Password</FormLabel>

@@ -48,8 +48,8 @@ const Quiz = () => {
 
                     <Stack
                         rounded={'xl'}
-                        
-                        bg={useColorModeValue( '#ffc72a', '#12e177')}
+
+                        bg={useColorModeValue('#ffc72a', '#12e177')}
                         boxShadow={'md'}
                         p={8}
                     >

@@ -16,14 +16,14 @@ export const authReducer = (state = initialstate, { type, payload }) => {
   switch (type) {
     case SIGNUP_SUCCESS: {
       alert(payload);
-    //   console.log(payload);
+      //   console.log(payload);
       return {
         ...state,
       };
     }
 
     case LOGIN_SUCCESS: {
-    //   console.log(payload);
+      //   console.log(payload);
       alert(payload.message);
 
       saveData('token', payload.token);
@@ -38,7 +38,7 @@ export const authReducer = (state = initialstate, { type, payload }) => {
     }
 
     case LOGOUT_SUCCESS: {
-        // console.log(type,payload)
+      // console.log(type,payload)
       saveData('isAuth', false);
       saveData('token', '');
       saveData('role', '');
@@ -50,7 +50,6 @@ export const authReducer = (state = initialstate, { type, payload }) => {
       };
     }
 
-    
     default:
       return state;
   }

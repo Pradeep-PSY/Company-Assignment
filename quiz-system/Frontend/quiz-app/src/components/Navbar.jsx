@@ -19,7 +19,7 @@ import { useDispatch } from 'react-redux';
 import { loadData } from '../hoc/localStorage';
 
 const Navbar = () => {
-    const bg = useColorModeValue( '#00d1a0', '#00b48a');
+    const bg = useColorModeValue('#00d1a0', '#00b48a');
     const color = useColorModeValue('gray.800', 'white');
     const { isOpen, onToggle } = useDisclosure();
     const isAuth = loadData('isAuth');
@@ -32,7 +32,7 @@ const Navbar = () => {
     };
 
 
-   
+
 
 
 
@@ -58,8 +58,8 @@ const Navbar = () => {
                         </Text>
                     ) : (
                         <Link to="/login">
-                            <Text cursor={'pointer'} m="2" fontSize="20" 
-                    onClick={onToggle}>
+                            <Text cursor={'pointer'} m="2" fontSize="20"
+                                onClick={onToggle}>
                                 Login
                             </Text>
                         </Link>
@@ -71,8 +71,8 @@ const Navbar = () => {
                 ) : (
                     <Link to="/signup">
                         <Text cursor={'pointer'} fontWeight={600}
-                        
-                    onClick={onToggle}
+
+                            onClick={onToggle}
                             m="2" fontSize="20">
                             Signup
                         </Text>

@@ -14,24 +14,24 @@ import { loadData } from '../hoc/localStorage'
 const Result = () => {
   const dispatch = useDispatch();
   const [score] = useState(loadData('point'));
-  const {once} = useSelector(state=>state.question)
+  const { once } = useSelector(state => state.question)
   const navigate = useNavigate();
 
-  const handleMagic =() =>{
+  const handleMagic = () => {
     dispatch(getMagic())
   }
 
   useEffect(() => {
-    if(once === true){
+    if (once === true) {
       alert('you had experience the magic once')
     }
-    else if(once === false){
+    else if (once === false) {
       navigate('/magic')
 
     }
   }, [once])
-  
-  
+
+
   return (
     <Box>
       <Flex justify="space-evenly" m='3' fontSize={'2xl'}>
@@ -66,11 +66,11 @@ const Result = () => {
         <Chart_sm />
       </Box>
 
-      <Box m='auto' p='6'  textAlign='center'>
+      <Box m='auto' p='6' textAlign='center'>
         <Text fontSize='xl' color='teal' fontWeight='bold'>If you want to experience some magic then click the button below.</Text>
-       
-          <Button colorScheme='red' m='2' onClick={handleMagic} disabled={once}>Magic</Button>
-      
+
+        <Button colorScheme='red' m='2' onClick={handleMagic} disabled={once}>Magic</Button>
+
       </Box>
     </Box>
   )
